@@ -1,0 +1,23 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/npm
+git:
+  depth: 3
+script:
+  - yarm test
+notifications:
+  email:
+    recipients:
+      - gabriel70@gmail.com
+      on_success: always
+      on_faliure: always
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  keep_history: true
+  api_key: 3e507082-15a2-46b5-b2a4-25bd55ee3e27
+  app: platzi-store-backend
+  on:
+    repo: gabriel70g/platzi-store-backend
